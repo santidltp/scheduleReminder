@@ -18,7 +18,7 @@ module.exports = function (app) {
       response.json([{
         name: 'Beverages'
       }, {
-        name: 'food'
+        name: 'condiments'
       }]);
     });
 
