@@ -7,12 +7,26 @@ var path = require('path'),
   mongoose = require('mongoose'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
+var accountSid = 'AC4d350c263e2f84dfe3f4203f5f666332';
+var authToken = "0539f1ecfa5f9c01ca98e933e0363641";
+var sms = require('./twilio/twilio-node/lib')(accountSid, authToken);
+
+
 
 /**
  * Create a Sm
  */
 exports.create = function (req, res) {
-
+  sms.messages.create({
+    body: "All in the game, yo",
+    to: "+17812197483",
+    from: "+16175536219"
+  }, function (err, sms) {
+    console.log('err: ' + err);
+    console.log('sms: ' + sms)
+    if (err) console.log(err);
+    console.log(sms.sid);
+  });
 };
 
 /**
