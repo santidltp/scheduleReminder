@@ -100,7 +100,13 @@ var UserSchema = new Schema({
   },
   resetPasswordExpires: {
     type: Date
-  }
+  },
+  reminder :[{
+    created: Date.now,
+    phone: String,
+    when: Date,
+    message: String,
+  }]
 });
 
 /**
