@@ -13,15 +13,7 @@ module.exports = function (app) {
   // Users collection routes
   app.route('/api/users')
     .get(adminPolicy.isAllowed, admin.list);
-  app.route('/categories')
-    .get(function (request, response) {
-      response.json([{
-        name: 'Beverages'
-      }, {
-        name: 'condiments'
-      }]);
-    });
-
+  
   // Single user routes
   app.route('/api/users/:userId')
     .get(adminPolicy.isAllowed, admin.read)
