@@ -17,16 +17,20 @@ var sms = require('../../../../twilio/twilio-node/lib')(accountSid, authToken);
  * Create a Sm
  */
 exports.create = function (req, res) {
-  sms.messages.create({
-    body: "All in the game, yo",
-    to: "+17812197483",
-    from: "+16175536219"
-  }, function (err, sms) {
-    console.log('err: ' + err);
-    console.log('sms: ' + sms)
-    if (err) console.log(err);
-    console.log(sms.sid);
-  });
+  setTimeout(function () {
+    sms.messages.create({
+      body: "All in the game, yo",
+      to: "+17812197483",
+      from: "+16175536219"
+    }, function (err, sms) {
+      console.log('err: ' + err);
+      console.log('sms: ' + sms)
+      if (err) console.log(err);
+      console.log(sms.sid);
+    });
+    res.end();
+
+  }, 30000);
 };
 
 /**
