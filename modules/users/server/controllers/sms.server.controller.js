@@ -9,7 +9,7 @@ var path = require('path'),
   _ = require('lodash');
 var accountSid = 'AC4d350c263e2f84dfe3f4203f5f666332';
 var authToken = "0539f1ecfa5f9c01ca98e933e0363641";
-var sms = require('./twilio/twilio-node/lib')(accountSid, authToken);
+var sms = require('../../../../twilio/twilio-node/lib')(accountSid, authToken);
 
 
 
