@@ -98,6 +98,47 @@ exports.me = function (req, res) {
 /**
  * Retreive reminders
  */
-exports.getReminders = function(request, response){
-  response.json(request.user.reminder || null);
+exports.getReminders = function (req, res) {
+  res.json(req.user.reminders || null);
+};
+
+/**
+ * Set reminders
+ */
+exports.setReminders = function (req, res) {
+  // Init Variables
+  var user = req.user;
+
+
+
+  if (user) {
+    // Merge existing user
+    user.updated = Date.now();
+    user.reminders.push({
+      created: Date.now(),
+      phone: req.body.phoneNumber,
+      when: req.body.when,
+      message: req.body.message,
+    });
+
+    user.save(function (err) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        req.login(user, function (err) {
+          if (err) {
+            res.status(400).send(err);
+          } else {
+            res.json(user);
+          }
+        });
+      }
+    });
+  } else {
+    res.status(400).send({
+      message: 'User is not signed in'
+    });
+  }
 };
