@@ -5,6 +5,12 @@ angular.module('users').config(['$stateProvider',
   function ($stateProvider) {
     // Users state routing
     $stateProvider
+      .state('reminder-tiles', {
+        url: '/reminder-tiles',
+        templateUrl: 'modules/users/client/views/remindertiles/reminder-tiles.client.view.html',
+        controller: 'RemindertilesController',
+        controllerAs: 'vm'
+      })
       .state('settings', {
         abstract: true,
         url: '/settings',
