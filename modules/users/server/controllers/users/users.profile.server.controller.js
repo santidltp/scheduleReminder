@@ -144,7 +144,7 @@ exports.setReminders = function (req, res) {
  */
 
 exports.deleteReminder = function (userID, reminderID, callback) {
-  user.findByIdAndUpdate({
+  User.findByIdAndUpdate({
     _id: userID
   }, {
     $pull: {
