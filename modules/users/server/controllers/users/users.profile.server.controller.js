@@ -138,3 +138,21 @@ exports.setReminders = function (req, res) {
     });
   }
 };
+
+/**
+ * Delete reminder using id
+ */
+
+exports.deleteReminder = function (userID, reminderID, callback) {
+  user.findByIdAndUpdate({
+    _id: userId
+  }, {
+    $pull: {
+      reminders: {
+        _id: reminderID
+      }
+    }
+  }, function (err, reminderID) {
+    callback(err, comment);
+  });
+};
