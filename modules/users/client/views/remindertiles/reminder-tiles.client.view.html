@@ -1,21 +1,31 @@
-<section data-ng-controller="RemindertilesController" >
+<section data-ng-controller="RemindertilesController">
   This is the Reminder tiles
-
-  <fieldset>
-	<legend>
-		<b>Tiles</b>
-	</legend>
-	<div class="tile">
-		<h2>Assembly</h2>
-		<p class="tile_description">Manage Product Assembly and Maintenance</p>
-	</div>
-	<div class="tile">
-		<h2>Design</h2>
-		<p class="tile_description">Manage Product Designs</p>
-	</div>
-	<div class="tile">
-		<h2>Document Generator</h2>
-		<p class="tile_description">Generate documents from recorded data</p>
-	</div>
-</fieldset>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="card card-block">
+          <h4 class="card-title">Phone: Number</h4>
+          <h4 class="card-title">When: Number</h4>
+          <h4 class="card-title">Message:</h4>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="card card-block">
+          <h4 class="card-title">Phone: Number</h4>
+          <h4 class="card-title">When: Number</h4>
+          <h4 class="card-title">Message:</h4>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+<!--reminders :[{
+    created: Date,
+    phone: String,
+    when: Date,
+    message: String,
+  }]-->
