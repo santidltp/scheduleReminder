@@ -143,16 +143,39 @@ exports.setReminders = function (req, res) {
  * Delete reminder using id
  */
 
-exports.deleteReminder = function (userID, reminderID, callback) {
-  User.findByIdAndUpdate({
-    _id: userID
-  }, {
-    $pull: {
-      reminders: {
-        _id: reminderID
+exports.deleteReminder = function (req, res) {
+  
+   var user = req.user;
+   var reminderID = req.body.reminderID;
+
+  if (user) {
+    user.updated = Date.now();
+    var reminders = user.reminders;
+    var deleteArray =[];
+    deleteArray = reminders.filter(function(toDelete){
+      return toDelete._id != reminderID;
+    });
+    console.log("deleted array: "+deleteArray);
+    user.reminders = deleteArray;
+
+    user.save(function (err) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        req.login(user, function (err) {
+          if (err) {
+            res.status(400).send(err);
+          } else {
+            res.json(user);
+          }
+        });
       }
-    }
-  }, function (err, reminderID) {
-    callback(err, reminderID);
-  });
+    });
+  } else {
+    res.status(400).send({
+      message: 'User is not signed in'
+    });
+  }
 };
