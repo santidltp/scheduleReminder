@@ -106,13 +106,9 @@ exports.getReminders = function (req, res) {
  * Set reminders
  */
 exports.setReminders = function (req, res) {
-  // Init Variables
   var user = req.user;
 
-
-
   if (user) {
-    // Merge existing user
     user.updated = Date.now();
     user.reminders.push({
       created: Date.now(),
