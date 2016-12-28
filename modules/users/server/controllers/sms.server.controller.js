@@ -22,10 +22,10 @@ exports.create = function (req, res) {
     sms.messages.create({
       body: req.body.message,
       to: req.body.phoneNumber,
-      from: "+16175536219"
+      from: '+16175536219'
     }, function (err, sms) {
       console.log('err: ' + err);
-      console.log('sms: ' + sms)
+      console.log('sms: ' + sms);
       if (err) console.log(err);
       console.log(sms.sid);
     });
