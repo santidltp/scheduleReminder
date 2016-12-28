@@ -98,6 +98,6 @@ exports.me = function (req, res) {
 /**
  * Retreive reminders
  */
-exports.reminders = function(request, response){
+exports.getReminders = function(request, response){
   response.json(request.user.reminder || null);
 };
