@@ -102,7 +102,7 @@ var UserSchema = new Schema({
     type: Date
   },
   reminder :[{
-    created: Date.now,
+    created: Date,
     phone: String,
     when: Date,
     message: String,

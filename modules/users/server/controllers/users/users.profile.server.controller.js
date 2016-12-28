@@ -94,3 +94,10 @@ exports.changeProfilePicture = function (req, res) {
 exports.me = function (req, res) {
   res.json(req.user || null);
 };
+
+/**
+ * Retreive reminders
+ */
+exports.reminders = function(request, response){
+  response.json(request.user.reminder || null);
+};
