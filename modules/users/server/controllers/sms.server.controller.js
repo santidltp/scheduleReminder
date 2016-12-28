@@ -17,10 +17,11 @@ var sms = require('../../../../twilio/twilio-node/lib')(accountSid, authToken);
  * Create a Sm
  */
 exports.create = function (req, res) {
+  //TODO: when logic here...
   setTimeout(function () {
     sms.messages.create({
-      body: "All in the game, yo",
-      to: "+17812197483",
+      body: req.body.message,
+      to: req.body.phoneNumber,
       from: "+16175536219"
     }, function (err, sms) {
       console.log('err: ' + err);
@@ -30,7 +31,7 @@ exports.create = function (req, res) {
     });
     res.end();
 
-  }, 30000);
+  }, 3);//change here for time
 };
 
 /**
