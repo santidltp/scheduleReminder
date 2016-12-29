@@ -1,16 +1,18 @@
 <section data-ng-controller="RemindertilesController">
   This is the Reminder tiles
-  <div class="col-md-2"ng-repeat="reminder in reminders">
-    <div class="row">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="card card-block" >
-              <h5 class="card-title">Phone: {{reminder.phone}}</h5>
-              <h5 class="card-title">When: {{reminder.when}}</h5>
-              <h5 class="card-title">Message:</h5>
-              <p class="card-text">{{reminder.message}}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="container" style="padding-top: 60px;">
+    <div class="col-md-2" ng-repeat="reminder in reminders">
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="card card-block">
+                <h5 class="card-title">Phone: {{reminder.phone}}</h5>
+                <h5 class="card-title">When: {{reminder.when}}</h5>
+                <h5 class="card-title">Message:</h5>
+                <p class="card-text">{{reminder.message}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
             </div>
           </div>
         </div>
