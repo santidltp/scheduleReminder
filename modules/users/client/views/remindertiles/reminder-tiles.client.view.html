@@ -1,31 +1,20 @@
 <section data-ng-controller="RemindertilesController">
   This is the Reminder tiles
-  <div class="container">
+  <div class="col-md-2"ng-repeat="reminder in reminders">
     <div class="row">
-      <div class="col-sm-2">
-        <div class="card card-block">
-          <h4 class="card-title">Phone: Number</h4>
-          <h4 class="card-title">When: Number</h4>
-          <h4 class="card-title">Message:</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="card card-block">
-          <h4 class="card-title">Phone: Number</h4>
-          <h4 class="card-title">When: Number</h4>
-          <h4 class="card-title">Message:</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="card card-block" >
+              <h5 class="card-title">Phone: {{reminder.phone}}</h5>
+              <h5 class="card-title">When: {{reminder.when}}</h5>
+              <h5 class="card-title">Message:</h5>
+              <p class="card-text">{{reminder.message}}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!--reminders :[{
-    created: Date,
-    phone: String,
-    when: Date,
-    message: String,
-  }]-->
