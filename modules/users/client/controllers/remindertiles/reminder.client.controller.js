@@ -11,4 +11,5 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
             console.log("this error was encounter: " + err)
         });
     }
+    
 ]);
