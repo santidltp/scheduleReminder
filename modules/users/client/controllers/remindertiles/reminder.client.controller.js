@@ -40,38 +40,36 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                 var time = ((Date.now() - dt));
 
 
-                    // Send Text message
-                    $http({
-                        url: '/sms',
-                        method: "POST",
-                        data: body,
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    }).success(function (response) {
-                        console.log("Text message sent!");
-                    }).error(function (response) {
-                        $scope.error = response.message;
-                    });
+                // Send Text message
+                $http({
+                    url: '/sms',
+                    method: "POST",
+                    data: body,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).success(function (response) {
+                    console.log("Text message sent!");
+                }).error(function (response) {
+                    $scope.error = response.message;
+                });
 
 
-                //delete message when done
-                // setTimeout(function () {
-                //     $http({
-                //         url: '/api/users/deletereminders',
-                //         method: "POST",
-                //         data: {
-                //             'reminderID': reminderID
-                //         },
-                //         headers: {
-                //             'Content-Type': 'application/json'
-                //         }
-                //     }).success(function (response) {
-                //         console.log("Text message deleted!");
-                //     }).error(function (response) {
-                //         $scope.error = response.message;
-                //     });
-                // }, 9000);
+                // delete message when done 
+                $http({
+                    url: '/api/users/deletereminders',
+                    method: "POST",
+                    data: {
+                        'reminderID': reminderID
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).success(function (response) {
+                    console.log("Text message deleted!");
+                }).error(function (response) {
+                    $scope.error = response.message;
+                });
 
 
 
