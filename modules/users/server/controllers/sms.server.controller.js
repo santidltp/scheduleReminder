@@ -31,6 +31,7 @@ exports.create = function (req, res) {
       console.log(sms.sid);
     });
     }, req.body.time);
+    app.post();
     res.end();
 
 };

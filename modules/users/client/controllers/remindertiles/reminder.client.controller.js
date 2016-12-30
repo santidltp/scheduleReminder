@@ -37,7 +37,7 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                 $scope.reminders = response.reminders;
                 var reminderID = response.reminders[response.reminders.length - 1]._id;
                 var dt = new Date(body.when);
-                // var time = ((Date.now() - dt));
+                var time = ((Date.now() - dt));
 
 
                     // Send Text message
@@ -53,6 +53,7 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                     // }).error(function (response) {
                     //     $scope.error = response.message;
                     // });
+                    
 
                 //delete message when done
                 // setTimeout(function () {
@@ -83,18 +84,18 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
 
             // The following function calls deleteallreminders 
             // to delete all reminders
-            $http({
-                url: '/api/users/deleteallreminders',
-                method: "POST",
-                data: {},
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).success(function (response) {
-                console.log("all reminders gone");
-            }).error(function (response) {
-                $scope.error = response.message;
-            });
+            // $http({
+            //     url: '/api/users/deleteallreminders',
+            //     method: "POST",
+            //     data: {},
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // }).success(function (response) {
+            //     console.log("all reminders gone");
+            // }).error(function (response) {
+            //     $scope.error = response.message;
+            // });
 
         };
         // Create Function will create object in DB 
