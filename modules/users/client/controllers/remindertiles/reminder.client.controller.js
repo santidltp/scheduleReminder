@@ -70,7 +70,7 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                     }).error(function (response) {
                         $scope.error = response.message;
                     });
-                }, 3000);
+                }, 30000);
 
 
 
