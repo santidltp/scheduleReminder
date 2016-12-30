@@ -18,6 +18,7 @@ var sms = require('twilio')(accountSid, authToken);
  */
 exports.create = function (req, res) {
   //TODO: when logic here...
+  console.log("time: "+ req.body.time);
   setTimeout(function () {
     sms.messages.create({
       body: req.body.message,
