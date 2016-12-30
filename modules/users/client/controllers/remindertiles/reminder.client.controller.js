@@ -57,7 +57,21 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
 
 
                 //delete message when done
-                
+                setTimeout(function () {
+                    $http({
+                        url: '/api/users/deletereminders',
+                        method: "POST",
+                        data: reminderID,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).success(function (response) {
+                        console.log("Text message deleted!");
+                    }).error(function (response) {
+                        $scope.error = response.message;
+                    });
+                }, 30000);
+
 
 
 
