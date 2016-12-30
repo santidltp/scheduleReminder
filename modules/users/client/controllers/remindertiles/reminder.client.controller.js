@@ -24,36 +24,63 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                 when: this.when,
                 message: this.message
             };
-            setTimeout(function () {
-                // body to be sent to DB and SMS sender
-                $http({
-                    url: '/api/users/reminders',
-                    method: "POST",
-                    data: body,
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }).success(function (response) {
-                    $scope.reminders = response.reminders;
-                    //Send Text message
-                    $http({
-                        url: '/sms',
-                        method: "POST",
-                        data: body,
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    }).success(function (response) {
-                        console.log("Text message sent!");
-                    }).error(function (response) {
-                        $scope.error = response.message;
-                    });
-                    console.log($scope.reminders);
-                }).error(function (response) {
-                    $scope.error = response.message;
-                });
+            // body to be sent to DB and SMS sender
+            $http({
+                url: '/api/users/reminders',
+                method: "POST",
+                data: body,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).success(function (response) {
+                $scope.reminders = response.reminders;
+                var reminderID = response.reminders[response.reminders.length - 1]._id;
+                var dt = new Date(body.when);
+                var time = ((Date.now() - dt));
+                setTimeout(function () {
 
-            }, 1000);
+
+                    //Send Text message
+                    // $http({
+                    //     url: '/sms',
+                    //     method: "POST",
+                    //     data: body,
+                    //     headers: {
+                    //         'Content-Type': 'application/json'
+                    //     }
+                    // }).success(function (response) {
+                    //     console.log("Text message sent!");
+                    // }).error(function (response) {
+                    //     $scope.error = response.message;
+                    // });
+                }, time);
+
+
+                //delete message when done
+                
+
+
+
+                console.log($scope.reminders);
+            }).error(function (response) {
+                $scope.error = response.message;
+            });
+
+
+            // The following function calls deleteallreminders 
+            // to delete all reminders
+            // $http({
+            //     url: '/api/users/deleteallreminders',
+            //     method: "POST",
+            //     data: {},
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // }).success(function (response) {
+            //     console.log("all reminders gone");
+            // }).error(function (response) {
+            //     $scope.error = response.message;
+            // });
 
         };
         // Create Function will create object in DB 
@@ -85,7 +112,7 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
             modalInstance.result.then(function (selectedItem) {
                 // console.log(selectedItem);
             }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
+                // $log.info('Modal dismissed at: ' + new Date());
             });
         }
     }
