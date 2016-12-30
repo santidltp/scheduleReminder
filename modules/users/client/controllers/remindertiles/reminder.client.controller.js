@@ -41,19 +41,19 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
 
 
                     // Send Text message
-                    // $http({
-                    //     url: '/sms',
-                    //     method: "POST",
-                    //     data: body,
-                    //     headers: {
-                    //         'Content-Type': 'application/json'
-                    //     }
-                    // }).success(function (response) {
-                    //     console.log("Text message sent!");
-                    // }).error(function (response) {
-                    //     $scope.error = response.message;
-                    // });
-                    
+                    $http({
+                        url: '/sms',
+                        method: "POST",
+                        data: body,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).success(function (response) {
+                        console.log("Text message sent!");
+                    }).error(function (response) {
+                        $scope.error = response.message;
+                    });
+
 
                 //delete message when done
                 // setTimeout(function () {
