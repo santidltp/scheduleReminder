@@ -40,21 +40,19 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                 // var time = ((Date.now() - dt));
 
 
-
-
                     // Send Text message
-                    $http({
-                        url: '/sms',
-                        method: "POST",
-                        data: body,
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    }).success(function (response) {
-                        console.log("Text message sent!");
-                    }).error(function (response) {
-                        $scope.error = response.message;
-                    });
+                    // $http({
+                    //     url: '/sms',
+                    //     method: "POST",
+                    //     data: body,
+                    //     headers: {
+                    //         'Content-Type': 'application/json'
+                    //     }
+                    // }).success(function (response) {
+                    //     console.log("Text message sent!");
+                    // }).error(function (response) {
+                    //     $scope.error = response.message;
+                    // });
 
                 //delete message when done
                 // setTimeout(function () {
@@ -85,18 +83,18 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
 
             // The following function calls deleteallreminders 
             // to delete all reminders
-            // $http({
-            //     url: '/api/users/deleteallreminders',
-            //     method: "POST",
-            //     data: {},
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     }
-            // }).success(function (response) {
-            //     console.log("all reminders gone");
-            // }).error(function (response) {
-            //     $scope.error = response.message;
-            // });
+            $http({
+                url: '/api/users/deleteallreminders',
+                method: "POST",
+                data: {},
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).success(function (response) {
+                console.log("all reminders gone");
+            }).error(function (response) {
+                $scope.error = response.message;
+            });
 
         };
         // Create Function will create object in DB 
