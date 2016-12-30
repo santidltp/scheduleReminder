@@ -13,7 +13,8 @@ module.exports = function (app) {
   app.route('/api/users/reminders')
       .get(users.getReminders)
       .post(users.setReminders);
-      app.route('/api/users/deletereminders').post(users.deleteReminder);
+  app.route('/api/users/deletereminders').post(users.deleteReminder);
+  app.route('/api/users/deleteallreminders').post(users.deleteAllReminders);
 
 
   // Finish by binding the user middleware
