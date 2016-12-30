@@ -40,7 +40,6 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                 // var time = ((Date.now() - dt));
 
 
-                setTimeout(function () {
 
 
                     // Send Text message
@@ -56,7 +55,6 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                     }).error(function (response) {
                         $scope.error = response.message;
                     });
-                }, 300);
 
                 //delete message when done
                 // setTimeout(function () {
