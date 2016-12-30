@@ -57,7 +57,7 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
 
                 // delete message when done 
                 $http({
-                    url: '/api/users/deletereminders',
+                    url: '/api/users/deletereminder',
                     method: "POST",
                     data: {
                         'reminderID': reminderID,
