@@ -19,11 +19,7 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
 
         $scope.send = function myFunction() {
 
-            var body = {
-                phoneNumber: this.phonenumber,
-                when: this.when,
-                message: this.message
-            };
+
             // body to be sent to DB and SMS sender
             $http({
                 url: '/api/users/reminders',
@@ -36,7 +32,14 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                 $scope.reminders = response.reminders;
                 var reminderID = response.reminders[response.reminders.length - 1]._id;
                 var dt = new Date(body.when);
-                var time = ((Date.now() - dt));
+                // var time = ((Date.now() - dt));
+                
+                var body = {
+                    phoneNumber: this.phonenumber,
+                    when: this.when,
+                    message: this.message,
+                    time: 9000
+                };
                 setTimeout(function () {
 
 
@@ -56,20 +59,22 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                 }, time);
 
                 //delete message when done
-                setTimeout(function () {
-                    $http({
-                        url: '/api/users/deletereminders',
-                        method: "POST",
-                        data: {'reminderID':reminderID},
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    }).success(function (response) {
-                        console.log("Text message deleted!");
-                    }).error(function (response) {
-                        $scope.error = response.message;
-                    });
-                }, 9000);
+                // setTimeout(function () {
+                //     $http({
+                //         url: '/api/users/deletereminders',
+                //         method: "POST",
+                //         data: {
+                //             'reminderID': reminderID
+                //         },
+                //         headers: {
+                //             'Content-Type': 'application/json'
+                //         }
+                //     }).success(function (response) {
+                //         console.log("Text message deleted!");
+                //     }).error(function (response) {
+                //         $scope.error = response.message;
+                //     });
+                // }, 9000);
 
 
 
