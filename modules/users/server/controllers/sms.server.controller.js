@@ -18,7 +18,6 @@ var sms = require('twilio')(accountSid, authToken);
  */
 exports.create = function (req, res) {
   //TODO: when logic here...
-  setTimeout(function () {
     sms.messages.create({
       body: req.body.message,
       to: req.body.phoneNumber,
@@ -31,7 +30,6 @@ exports.create = function (req, res) {
     });
     res.end();
 
-  }, 3);//change here for time
 };
 
 /**
