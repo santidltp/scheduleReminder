@@ -145,48 +145,49 @@ exports.setReminders = function (req, res) {
  */
 
 exports.deleteReminder = function (req, res) {
-  
-   var user = req.user;
-   var reminderID = req.body.reminderID;
 
-  if (user) {
-    user.updated = Date.now();
-    var reminders = user.reminders;
-    var deleteArray =[];
-    deleteArray = reminders.filter(function(toDelete){
-      return toDelete._id != reminderID;
-    });
-    console.log("deleted array: "+deleteArray);
-    user.reminders = deleteArray;
+  var user = req.user;
+  var reminderID = req.body.reminderID;
+  setTimeout(function () {
+    if (user) {
+      user.updated = Date.now();
+      var reminders = user.reminders;
+      var deleteArray = [];
+      deleteArray = reminders.filter(function (toDelete) {
+        return toDelete._id != reminderID;
+      });
+      console.log("deleted array: " + deleteArray);
+      user.reminders = deleteArray;
 
-    user.save(function (err) {
-      if (err) {
-        return res.status(400).send({
-          message: errorHandler.getErrorMessage(err)
-        });
-      } else {
-        req.login(user, function (err) {
-          if (err) {
-            res.status(400).send(err);
-          } else {
-            res.json(user);
-          }
-        });
-      }
-    });
-  } else {
-    res.status(400).send({
-      message: 'User is not signed in'
-    });
-  }
+      user.save(function (err) {
+        if (err) {
+          return res.status(400).send({
+            message: errorHandler.getErrorMessage(err)
+          });
+        } else {
+          req.login(user, function (err) {
+            if (err) {
+              res.status(400).send(err);
+            } else {
+              res.json(user);
+            }
+          });
+        }
+      });
+    } else {
+      res.status(400).send({
+        message: 'User is not signed in'
+      });
+    }
+  }, req.body.time);
 };
 
 /**
  * Delete All Reminders
  */
 exports.deleteAllReminders = function (req, res) {
-  
-   var user = req.user;
+
+  var user = req.user;
 
   if (user) {
     user.reminders = [];
