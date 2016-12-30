@@ -19,7 +19,12 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
 
         $scope.send = function myFunction() {
 
-
+            var body = {
+                phoneNumber: this.phonenumber,
+                when: this.when,
+                message: this.message,
+                time: 9000
+            };
             // body to be sent to DB and SMS sender
             $http({
                 url: '/api/users/reminders',
@@ -33,13 +38,8 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                 var reminderID = response.reminders[response.reminders.length - 1]._id;
                 var dt = new Date(body.when);
                 // var time = ((Date.now() - dt));
-                
-                var body = {
-                    phoneNumber: this.phonenumber,
-                    when: this.when,
-                    message: this.message,
-                    time: 9000
-                };
+
+
                 setTimeout(function () {
 
 
