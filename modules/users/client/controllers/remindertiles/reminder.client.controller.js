@@ -54,7 +54,6 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                     //     $scope.error = response.message;
                     // });
                 }, time);
-                console.log("here");
 
                 //delete message when done
                 setTimeout(function () {
