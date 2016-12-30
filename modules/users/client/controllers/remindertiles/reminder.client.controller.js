@@ -60,7 +60,8 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                     url: '/api/users/deletereminders',
                     method: "POST",
                     data: {
-                        'reminderID': reminderID
+                        'reminderID': reminderID,
+                        'time':body.time
                     },
                     headers: {
                         'Content-Type': 'application/json'
