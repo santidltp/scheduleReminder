@@ -10,32 +10,41 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
         error(function (err) {
             console.log("this error was encounter: " + err)
         });
-        $scope.items = ['item1', 'item2', 'item3'];
+
+
+        $scope.create =function(){
+            alert(this.when);
+        };
         $scope.open = function () {
-            var myModal = $modal.open({
+
+            var modalInstance = $modal.open({
                 templateUrl: 'modules/users/views/remindertiles/newsms.html',
                 size: 'sm',
-                controller: function ($scope, $modalInstance, items) {
+                controller: function ($scope, $modalInstance) {
 
-                    $scope.items = items;
-                    $scope.selected = {
-                        item: $scope.items[0]
-                    };
-
+                    //when the user hits Submit
                     $scope.ok = function () {
-                        $modalInstance.close($scope.selected.item);
+                        // console.log(data);
+                        $modalInstance.close();
                     };
 
+
+
+
+                    //When user hits cancel into the modal
                     $scope.cancel = function () {
                         $modalInstance.dismiss('cancel');
                     };
                 },
-                resolve: {
-                    items: function () {
-                        return $scope.items;
-                    }
-                }
+
+            });
+            modalInstance.result.then(function (selectedItem) {
+                console.log(selectedItem);
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
             });
         }
+
+
     }
 ]);

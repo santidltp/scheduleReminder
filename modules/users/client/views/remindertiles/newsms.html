@@ -1,16 +1,16 @@
-<div class="modal-content">
-  <div class="modal-header">
-    <button type="button" class="close" ng-click="cancel()">&times;</button>
-    <h4 class="modal-title">SMS reminder</h4>
-  </div>
-  <div class="modal-body">
-    phone Number: <input type="text" class="form-control" name="phoneNumber" value="Mickey"><br> 
-    When: <input type="text" class="form-control" name="when" value="Mouse"><br>
-    Message:
-    <textarea class="form-control" rows="5" id="comment"></textarea>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
-    <button type="button" class="btn btn-primary" ng-click="ok()">Save</button>
-  </div>
-  <!--</div> /.modal-content -->
+<section data-ng-controller="RemindertilesController">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" ng-click="cancel()">&times;</button>
+      <h4 class="modal-title">SMS reminder</h4>
+    </div>
+    <div class="modal-body">
+      phone Number: <input type="text" class="form-control" ng-model="phonenumber" name="phoneNumber" value="Mickey"><br>      When: <input type="text" class="form-control" ng-model="when" name="when" value="Mouse"><br> Message:
+      <textarea class="form-control" rows="5" ng-model="message" id="comment"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
+      <button type="button" class="btn btn-primary" ng-click="create(); ok()">Submit</button>
+    </div>
+</section>
+<!--</div> /.modal-content -->
