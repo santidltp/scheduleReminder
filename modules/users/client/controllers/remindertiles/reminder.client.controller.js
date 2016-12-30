@@ -88,7 +88,5 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                 $log.info('Modal dismissed at: ' + new Date());
             });
         }
-
-
     }
 ]);
