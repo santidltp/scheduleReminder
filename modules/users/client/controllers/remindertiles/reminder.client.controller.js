@@ -69,7 +69,7 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                 }).success(function (response) {
                     console.log("Text message deleted!");
                 }).error(function (response) {
-                    $scope.error = response.message;
+                    console.log(response);
                 });
 
 
@@ -77,7 +77,7 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
 
                 console.log($scope.reminders);
             }).error(function (response) {
-                $scope.error = response.message;
+                console.log(response);
             });
 
 
