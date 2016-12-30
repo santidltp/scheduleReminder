@@ -54,14 +54,14 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                     //     $scope.error = response.message;
                     // });
                 }, time);
-
+                console.log("here");
 
                 //delete message when done
                 setTimeout(function () {
                     $http({
                         url: '/api/users/deletereminders',
                         method: "POST",
-                        data: reminderID,
+                        data: {'reminderID':reminderID},
                         headers: {
                             'Content-Type': 'application/json'
                         }
@@ -70,7 +70,7 @@ angular.module('users').controller('RemindertilesController', ['$scope', '$state
                     }).error(function (response) {
                         $scope.error = response.message;
                     });
-                }, 30000);
+                }, 3000);
 
 
 
