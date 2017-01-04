@@ -42,6 +42,11 @@ After the install process is over, you'll be able to run your application using 
 ```
 $ grunt
 ```
+or
+```
+$ npm start
+```
+
 
 Your application should run on port 3000 with the *development* environment configuration, so in your browser just go to [http://localhost:3000](http://localhost:3000)
 
