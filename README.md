@@ -1,5 +1,7 @@
 
-<img src="http://meanjs.org/img/logo-small.png">  <img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" height="70px" weight="70px">
+###Schedule reminder
+<div style="text-align:center">
+<img src="http://meanjs.org/img/logo-small.png">  <img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" height="70px" weight="70px"></div>
 
 Schedule reminder is an application that helps you organize some of your notes(like postits), and it will send you a text message on when you want the application to text remind you. This application was developed using [MEAN.JS](https://meanjs.org/), which is a full-stack JavaScript open-source solution, which provides a solid starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. In addition, this application uses [Twilio's](https://www.twilio.com/) REST API's for text messeing.
 
@@ -42,11 +44,9 @@ After the install process is over, you'll be able to run your application using 
 ```
 $ grunt
 ```
-or
 ```
 $ npm start
 ```
-
 
 Your application should run on port 3000 with the *development* environment configuration, so in your browser just go to [http://localhost:3000](http://localhost:3000)
 
