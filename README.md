@@ -1,6 +1,7 @@
 
-[![](http://meanjs.org/img/logo-small.png)](http://meanjs.org/) +
- <img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" height="0px" weight="80px">
+[![Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/) + [![Logo](https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico =50x50)](https://www.twilio.com/)
+
+<img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" height="0px" weight="80px">
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
