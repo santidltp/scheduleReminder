@@ -1,5 +1,5 @@
 
-[![Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/) + [![Logo](https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico)](https://www.twilio.com/)
+[![Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/) 
 
 <img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" height="0px" weight="80px">
 
