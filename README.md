@@ -1,5 +1,5 @@
 
-    (http://meanjs.org/img/logo-small.png) +  (https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico)
+    [![balck](http://meanjs.org/img/logo-small.png)] +  (https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico)
  
 
  
