@@ -1,7 +1,7 @@
 
 [![Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/) + [![Logo](https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico =50x50)](https://www.twilio.com/)
 
-<img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" height="100px" weight="100px">
+<img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" height="50px" weight="50px">
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
