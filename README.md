@@ -1,7 +1,7 @@
 
-###Schedule reminder
+#Schedule reminder
 <div style="text-align:center">
-<img src="http://meanjs.org/img/logo-small.png">  <img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" height="70px" weight="70px"></div>
+<img src="http://meanjs.org/img/logo-small.png"></div>  <img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" height="70px" weight="70px">
 
 Schedule reminder is an application that helps you organize some of your notes(like postits), and it will send you a text message on when you want the application to text remind you. This application was developed using [MEAN.JS](https://meanjs.org/), which is a full-stack JavaScript open-source solution, which provides a solid starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. In addition, this application uses [Twilio's](https://www.twilio.com/) REST API's for text messeing.
 
