@@ -1,5 +1,5 @@
 
-<img src="http://meanjs.org/img/logo-small.png"align="center">  <img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" align="center"height="70px" weight="70px">
+<img src="http://meanjs.org/img/logo-small.png"align="right">  <img src="https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico" align="right"height="70px" weight="70px">
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Master Branch: 
